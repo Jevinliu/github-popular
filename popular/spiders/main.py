@@ -5,7 +5,7 @@ from popular.items import PopularItem
 
 class PopularSpider(scrapy.Spider):
     name = "popular"
-    allowed_domains = ["popular.org"]
+    allowed_domains = ["github.com"]
     start_urls = [
         "https://github.com/trending"
     ]
