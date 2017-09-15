@@ -4,6 +4,7 @@ from flask import jsonify
 from flask import render_template
 from flask_mongoengine import MongoEngine
 from models import Trending
+from bson import json_util
 import os
 import json
 
@@ -18,9 +19,8 @@ def home():
 @app.route('/getJson', methods=['GET', 'POST'])
 def getJson():
     trendings = Trending.query()
-    for trending in trendings:
-        print (trending)
-    return jsonify({'ok': True})
+    data = json_util.dumps(list(trendings))
+    return data
 
 if __name__ == '__main__':
     #os.system('python .\startSpider.py')

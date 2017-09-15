@@ -3,7 +3,7 @@
 
 import pymongo
 
-# 返回一个 collection
+# 获取 collection
 def getColl():
     client = pymongo.MongoClient('127.0.0.1', 27017)
     db = client.popular

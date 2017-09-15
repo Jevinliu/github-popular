@@ -1,26 +1,23 @@
 $(document).ready(function () {
+    var jsonData;
+    $.ajax({
+        type: 'GET',
+        url: '/getJson',
+        dataType: 'json',
+        async: false,
+        success: function (data) {
+            jsonData = data;
+        }
+    });
+    console.log(jsonData);
     /*********vue*********/
     var app = new Vue({
-        el: "#layout",
+        delimiters: ['[[', ']]'],
+        el: "#table",
         data: function () {
             return {
-                transactions: []
+                trendings: jsonData
             }
-        },
-        created: function () {
-            var sumData = [];
-            $.ajax({
-                type: 'GET',
-                url: '/getJson',
-                dataType: 'json', 
-                success: function(data) {
-                    console.log(data);
-                },
-                error: function(xhr, type) {
-                }
-            });
-            this.transactions = sumData;//这里的this是vue对象，如果放到jquery里面就不是vue对象了
-            //console.log(this.transactions);
         }
     })
     /*********vue*********/

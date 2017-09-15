@@ -2,3 +2,4 @@
 *.html
 *.json
 *.pyc
+__pycache__

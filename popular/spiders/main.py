@@ -22,7 +22,6 @@ class PopularSpider(scrapy.Spider):
             'todayStar': '//span[@class="d-inline-block float-sm-right"]/text()',
         }
 
-        filename = response.url.split("/")[-2] + '.html'
         nodes = response.xpath('//ol[@class="repo-list"]//li').extract()
         for node in nodes:
             tree = etree.HTML(node)
@@ -32,6 +31,3 @@ class PopularSpider(scrapy.Spider):
                     replace(' /', '').replace(' stars today', '')), result)))
             print(item)
             yield item
-
-        with open(filename, 'wb') as f:
-            f.write(response.body)
