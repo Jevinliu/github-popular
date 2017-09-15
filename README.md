@@ -28,6 +28,7 @@ python app.py
 http://locolhost:5000
 
 ## 目录结构
+
 ├── README.md                   // help
 ├── app.py                      // web入口
 ├── requirements.txt            // python相关依赖
@@ -46,4 +47,4 @@ https://github.com/trending
 获取的数据
 最后在网页上进行分析显示
 
-![image](https://github.com/guanpengchn/github-popular/doc/content.png)
+![image](https://github.com/guanpengchn/github-popular/blob/master/doc/content.png)
