@@ -28,7 +28,7 @@ python app.py
 http://locolhost:5000
 
 ## 目录结构
-
+```
 ├── README.md                   // help
 ├── app.py                      // web入口
 ├── requirements.txt            // python相关依赖
@@ -38,6 +38,7 @@ http://locolhost:5000
 ├── static                      // 静态资源
 ├── popular                     // 爬虫
 └── doc                         // 相关文档
+```
 
 ## 效果
 mongodb中会生成
